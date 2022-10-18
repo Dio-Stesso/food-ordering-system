@@ -19,11 +19,16 @@ public class DrinkOrderOperation implements OrderOperation<Drink> {
         switch (scanner.nextInt()) {
             case 1:
                 drink.setIceIncluded(true);
+                break;
             case 2:
                 drink.setLemonIncluded(true);
+                break;
             case 3:
                 drink.setIceIncluded(true);
                 drink.setLemonIncluded(true);
+                break;
+            default:
+                break;
         }
         orderStrategy.setGeneralPrice(orderStrategy.getGeneralPrice().add(drink.getPrice()));
         return drink;
