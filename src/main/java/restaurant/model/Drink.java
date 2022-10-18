@@ -8,6 +8,8 @@ import lombok.Setter;
 @Setter
 public class Drink {
     private String name;
+    private boolean isIceIncluded;
+    private boolean isLemonIncluded;
     private BigDecimal price;
 
     public Drink(String name, BigDecimal price) {
@@ -20,6 +22,8 @@ public class Drink {
         return "Drink{"
                 + "name = '" + name + '\''
                 + ", price = " + price
+                + ", ice " + (isIceIncluded ? "included" : "not included")
+                + ", lemon " + (isLemonIncluded ? "included" : "not included")
                 + '}';
     }
 }

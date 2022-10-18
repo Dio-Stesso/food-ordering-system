@@ -38,7 +38,7 @@ public class OrderStrategy {
                 order.setDrink(drink);
             }
         } else {
-            System.out.println("Maybe you would like to order a drink, wouldn't you?");
+            System.out.println("Maybe you would like to order a drink, wouldn't you? (Y/N)");
             if ("Y".equals(scanner.next())) {
                 OrderOperation<Drink> drinkOrderOperation = new DrinkOrderOperation();
                 Drink drink = drinkOrderOperation.doOrder(scanner, this);

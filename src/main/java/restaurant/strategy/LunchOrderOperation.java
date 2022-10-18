@@ -21,7 +21,7 @@ public class LunchOrderOperation implements OrderOperation<Lunch> {
                 .filter(lunch -> lunch.getCuisine().getName().equals(cuisine))
                 .toList();
         for (int i = 1; i <= lunches.size(); i++) {
-            System.out.println(lunches.get(i - 1) + " - " + i);
+            System.out.println(i + " - " + lunches.get(i - 1));
         }
         System.out.println("Specify an appropriate number of lunch.");
         int lunchNumber = scanner.nextInt() - 1;
