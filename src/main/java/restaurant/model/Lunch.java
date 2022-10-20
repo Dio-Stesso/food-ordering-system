@@ -1,5 +1,6 @@
 package restaurant.model;
 
+import java.util.Objects;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,6 +35,25 @@ public class Lunch {
         public String toString() {
             return name;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Lunch lunch = (Lunch) o;
+        return Objects.equals(mainCourse, lunch.mainCourse)
+                && Objects.equals(dessert, lunch.dessert)
+                && cuisine == lunch.cuisine;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mainCourse, dessert, cuisine);
     }
 
     @Override

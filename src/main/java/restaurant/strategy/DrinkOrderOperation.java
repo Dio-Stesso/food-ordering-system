@@ -16,7 +16,12 @@ public class DrinkOrderOperation implements OrderOperation<Drink> {
         int drinkNumber = scanner.nextInt() - 1;
         Drink drink = drinks.get(drinkNumber);
         System.out.println("Would you like to add ice(1), lemon(2), or both(3)?");
-        switch (scanner.nextInt()) {
+        orderStrategy.setGeneralPrice(orderStrategy.getGeneralPrice().add(drink.getPrice()));
+        return drink;
+    }
+
+    public Drink addGoodsToDrink(Drink drink, int choice) {
+        switch (choice) {
             case 1:
                 drink.setIceIncluded(true);
                 break;
@@ -30,7 +35,6 @@ public class DrinkOrderOperation implements OrderOperation<Drink> {
             default:
                 break;
         }
-        orderStrategy.setGeneralPrice(orderStrategy.getGeneralPrice().add(drink.getPrice()));
         return drink;
     }
 }
