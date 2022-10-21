@@ -2,11 +2,7 @@ package restaurant.model;
 
 import java.math.BigDecimal;
 import java.util.Objects;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class Drink {
     private String name;
     private boolean isIceIncluded;
@@ -15,6 +11,38 @@ public class Drink {
 
     public Drink(String name, BigDecimal price) {
         this.name = name;
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isIceIncluded() {
+        return isIceIncluded;
+    }
+
+    public void setIceIncluded(boolean iceIncluded) {
+        isIceIncluded = iceIncluded;
+    }
+
+    public boolean isLemonIncluded() {
+        return isLemonIncluded;
+    }
+
+    public void setLemonIncluded(boolean lemonIncluded) {
+        isLemonIncluded = lemonIncluded;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

@@ -4,20 +4,32 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import lombok.Getter;
-import lombok.Setter;
 import restaurant.model.Drink;
 import restaurant.model.Lunch;
 import restaurant.model.Order;
 
-@Getter
-@Setter
 public class OrderStrategy {
     private BigDecimal generalPrice;
     private String cuisine;
 
     public OrderStrategy(BigDecimal generalPrice) {
         this.generalPrice = generalPrice;
+    }
+
+    public BigDecimal getGeneralPrice() {
+        return generalPrice;
+    }
+
+    public void setGeneralPrice(BigDecimal generalPrice) {
+        this.generalPrice = generalPrice;
+    }
+
+    public String getCuisine() {
+        return cuisine;
+    }
+
+    public void setCuisine(String cuisine) {
+        this.cuisine = cuisine;
     }
 
     public Order startStrategy() {

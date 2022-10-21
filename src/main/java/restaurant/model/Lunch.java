@@ -1,11 +1,7 @@
 package restaurant.model;
 
 import java.util.Objects;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class Lunch {
     private MainCourse mainCourse;
     private Dessert dessert;
@@ -14,6 +10,30 @@ public class Lunch {
     public Lunch(MainCourse mainCourse, Dessert dessert, Cuisines cuisine) {
         this.mainCourse = mainCourse;
         this.dessert = dessert;
+        this.cuisine = cuisine;
+    }
+
+    public MainCourse getMainCourse() {
+        return mainCourse;
+    }
+
+    public void setMainCourse(MainCourse mainCourse) {
+        this.mainCourse = mainCourse;
+    }
+
+    public Dessert getDessert() {
+        return dessert;
+    }
+
+    public void setDessert(Dessert dessert) {
+        this.dessert = dessert;
+    }
+
+    public Cuisines getCuisine() {
+        return cuisine;
+    }
+
+    public void setCuisine(Cuisines cuisine) {
         this.cuisine = cuisine;
     }
 
